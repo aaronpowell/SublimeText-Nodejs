@@ -20,7 +20,7 @@
         { "id": "nodejsdrun", "caption": "Debug", "command": "node_drun" },
         { "id": "nodejsdrunarguments", "caption": "Debug + arguments", "command": "node_drun_arguments" }
       ]
-    }] 
+    }]
   }]
 },
 {
@@ -35,16 +35,12 @@
       "caption": "Nodejs",
       "children": [{
         "command": "open_file",
-        "args": {
-          "file": "${packages}/Nodejs/Nodejs.sublime-settings"
-        },
+        "args": { "file": "${packages}/Nodejs/Nodejs.sublime-settings" },
         "caption": "Settings – Default"
       },
       {
         "command": "open_file",
-        "args": {
-          "file": "${packages}/User/Nodejs.sublime-settings"
-        },
+        "args": { "file": "${packages}/User/Nodejs.sublime-settings" },
         "caption": "Settings – User"
       },
       {

@@ -193,7 +193,6 @@ class NodeTextCommand(NodeCommand, sublime_plugin.TextCommand):
 class NodeBuilddocsCommand(NodeTextCommand):
   def run(self, edit):
     doc_builder = plugin_file('tools/default_build.js')
-
     command = ['node', os.path.realpath(doc_builder)]
     self.run_command(command, self.command_done)
 
@@ -218,7 +217,11 @@ class NodeDrunCommand(NodeTextCommand):
     self.run_command(command, self.command_done)
 
   def command_done(self, result):
-    self.scratch(result, title="Node Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    s = sublime.load_settings("Nodejs.sublime-settings")
+    if s.get('ouput_to_new_tab'):
+      self.scratch(result, title="Node Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    else:
+      self.panel(result)
 
 class NodeRunArgumentsCommand(NodeTextCommand):
   def run(self, edit):
@@ -231,7 +234,11 @@ class NodeRunArgumentsCommand(NodeTextCommand):
     self.run_command(command, self.command_done)
 
   def command_done(self, result):
-    self.scratch(result, title="Node Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    s = sublime.load_settings("Nodejs.sublime-settings")
+    if s.get('ouput_to_new_tab'):
+      self.scratch(result, title="Node Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    else:
+      self.panel(result)
 
 class NodeDrunArgumentsCommand(NodeTextCommand):
   def run(self, edit):
@@ -245,7 +252,11 @@ class NodeDrunArgumentsCommand(NodeTextCommand):
     self.run_command(command, self.command_done)
 
   def command_done(self, result):
-    self.scratch(result, title="Node Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    s = sublime.load_settings("Nodejs.sublime-settings")
+    if s.get('ouput_to_new_tab'):
+      self.scratch(result, title="Node Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    else:
+      self.panel(result)
 
 class NodeNpmCommand(NodeTextCommand):
   def run(self, edit):
@@ -257,4 +268,8 @@ class NodeNpmCommand(NodeTextCommand):
     self.run_command(command, self.command_done)
 
   def command_done(self, result):
-    self.scratch(result, title="NPM Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    s = sublime.load_settings("Nodejs.sublime-settings")
+    if s.get('ouput_to_new_tab'):
+      self.scratch(result, title="Node Output", syntax="Packages/JavaScript/JavaScript.tmLanguage")
+    else:
+      self.panel(result)

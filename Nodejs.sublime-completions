@@ -102,12 +102,12 @@
             "contents": "process.on(type, listener);"
         },
         {
-            "trigger": "process.reallyExit();",
-            "contents": "process.reallyExit();"
-        },
-        {
             "trigger": "process.removeListener(type, listener);",
             "contents": "process.removeListener(type, listener);"
+        },
+        {
+            "trigger": "process.reallyExit();",
+            "contents": "process.reallyExit();"
         },
         {
             "trigger": "process.chdir();",
@@ -118,12 +118,12 @@
             "contents": "process.debug();"
         },
         {
-            "trigger": "process.cwd();",
-            "contents": "process.cwd();"
-        },
-        {
             "trigger": "process.error();",
             "contents": "process.error();"
+        },
+        {
+            "trigger": "process.cwd();",
+            "contents": "process.cwd();"
         },
         {
             "trigger": "process.watchFile();",
@@ -134,40 +134,56 @@
             "contents": "process.umask();"
         },
         {
-            "trigger": "process._kill();",
-            "contents": "process._kill();"
+            "trigger": "process.getuid();",
+            "contents": "process.getuid();"
         },
         {
             "trigger": "process.unwatchFile();",
             "contents": "process.unwatchFile();"
         },
         {
-            "trigger": "process._debugProcess();",
-            "contents": "process._debugProcess();"
-        },
-        {
             "trigger": "process.mixin();",
             "contents": "process.mixin();"
         },
         {
-            "trigger": "process.dlopen();",
-            "contents": "process.dlopen();"
+            "trigger": "process.setuid();",
+            "contents": "process.setuid();"
+        },
+        {
+            "trigger": "process.setgid();",
+            "contents": "process.setgid();"
         },
         {
             "trigger": "process.createChildProcess();",
             "contents": "process.createChildProcess();"
         },
         {
+            "trigger": "process.getgid();",
+            "contents": "process.getgid();"
+        },
+        {
             "trigger": "process.inherits();",
             "contents": "process.inherits();"
         },
         {
-            "trigger": "process.uptime();",
-            "contents": "process.uptime();"
+            "trigger": "process._kill();",
+            "contents": "process._kill();"
         },
         {
             "trigger": "process._byteLength();",
             "contents": "process._byteLength();"
+        },
+        {
+            "trigger": "process._debugProcess();",
+            "contents": "process._debugProcess();"
+        },
+        {
+            "trigger": "process.dlopen();",
+            "contents": "process.dlopen();"
+        },
+        {
+            "trigger": "process.uptime();",
+            "contents": "process.uptime();"
         },
         {
             "trigger": "process.memoryUsage();",
@@ -730,12 +746,28 @@
             "contents": "fs.fchmodSync(fd, mode);"
         },
         {
+            "trigger": "fs.lchmod(path, mode, callback);",
+            "contents": "fs.lchmod(path, mode, callback);"
+        },
+        {
+            "trigger": "fs.lchmodSync(path, mode);",
+            "contents": "fs.lchmodSync(path, mode);"
+        },
+        {
             "trigger": "fs.chmod(path, mode, callback);",
             "contents": "fs.chmod(path, mode, callback);"
         },
         {
             "trigger": "fs.chmodSync(path, mode);",
             "contents": "fs.chmodSync(path, mode);"
+        },
+        {
+            "trigger": "fs.lchown(path, uid, gid, callback);",
+            "contents": "fs.lchown(path, uid, gid, callback);"
+        },
+        {
+            "trigger": "fs.lchownSync(path, uid, gid);",
+            "contents": "fs.lchownSync(path, uid, gid);"
         },
         {
             "trigger": "fs.fchown(fd, uid, gid, callback);",
@@ -1064,6 +1096,10 @@
         {
             "trigger": "path.existsSync(path);",
             "contents": "path.existsSync(path);"
+        },
+        {
+            "trigger": "path._makeLong(path);",
+            "contents": "path._makeLong(path);"
         },
         {
             "trigger": "punycode.decode(input, preserveCase);",
